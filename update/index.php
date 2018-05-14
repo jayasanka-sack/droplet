@@ -11,8 +11,8 @@ if(!isset($_GET['id'])){
 }
 
 date_default_timezone_set("Asia/Colombo");
-$date = date("Y-m-d H:i:s");
+$date = date("Y-m-d H:i:s")." \n ";
 
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $date.'\n');
-fclose($myfile);
+$myfile = file_put_contents('newfile.txt', $date.PHP_EOL , FILE_APPEND | LOCK_EX);
+
+echo '{"message":"success"}';
