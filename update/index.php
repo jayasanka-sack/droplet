@@ -21,7 +21,6 @@ if(isset($_GET['rHeight'])){
     if(is_numeric($rHeight)){
         $rHeight = intval($rHeight);
         $con->query("INSERT INTO level(deviceId, time, data) VALUES ('$deviceId','$date','$rHeight')");
-        echo 1;
     }
 }
 if(isset($_GET['usage'])){
@@ -29,7 +28,6 @@ if(isset($_GET['usage'])){
     if(is_numeric($usage)){
         $rHeight = floatval($usage);
         $isSuccess = $con->query("INSERT INTO `usage`(deviceId, time, data) VALUES ('$deviceId','$date','$usage')");
-        echo 2;
     }
 }
 if($isSuccess){

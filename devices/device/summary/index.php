@@ -33,7 +33,7 @@ if (mysqli_num_rows($usageMonthRes) == 1) {
     $usage["month"] = (int)$usageMonthRow["data"];
 }
 
-$levelRes = $con->query("SELECT data FROM level WHERE deviceId='$deviceId' ORDER BY deviceId DESC LIMIT 1");
+$levelRes = $con->query("SELECT data FROM level WHERE deviceId='$deviceId' ORDER BY levelId DESC LIMIT 1");
 if (mysqli_num_rows($levelRes) == 1) {
     $levelRow = mysqli_fetch_assoc($levelRes);
     $rHight = $levelRow["data"];
