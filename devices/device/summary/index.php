@@ -37,7 +37,8 @@ $levelRes = $con->query("SELECT data FROM level WHERE deviceId='$deviceId' ORDER
 if (mysqli_num_rows($levelRes) == 1) {
     $levelRow = mysqli_fetch_assoc($levelRes);
     $rHight = $levelRow["data"];
-    $serverPrefix = "http://localhost/droplet/";
+//    $serverPrefix = "http://localhost/droplet/";
+    $serverPrefix = "http://139.59.81.23/apis/droplet/";
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_RETURNTRANSFER => 1,
