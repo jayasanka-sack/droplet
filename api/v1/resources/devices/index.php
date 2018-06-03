@@ -1,5 +1,5 @@
 <?php
-include "../config/connection.php";
+include "../../config/connection.php";
 $res = $con->query("SELECT * FROM device");
 $data = array();
 $devices = array();

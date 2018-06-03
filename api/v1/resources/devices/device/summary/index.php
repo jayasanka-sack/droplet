@@ -1,5 +1,5 @@
 <?php
-include "../../../config/connection.php";
+include "../../../../config/connection.php";
 if (!isset($_GET['id'])) {
     echo '{
    "error": {

@@ -10,7 +10,7 @@ if(!isset($_GET['deviceId'])){
     http_response_code(401);
     exit();
 }
-include '../config/connection.php';
+include '../../config/connection.php';
 date_default_timezone_set("Asia/Colombo");
 $date = date("Y-m-d H:i:s");
 $deviceId = $_GET['deviceId'];

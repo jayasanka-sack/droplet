@@ -1,6 +1,6 @@
 <?php
-include "../../../../config/connection.php";
-include "../../../../config/functions.php";
+include "../../../../../config/connection.php";
+include "../../../../../config/functions.php";
 if (!isset($_GET['id'])) {
     echo '{
    "error": {
