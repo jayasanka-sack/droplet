@@ -17,7 +17,10 @@ $data = array();
 $usages = array();
 $result = $con->query("SELECT time,data FROM `usage` WHERE deviceId='$deviceId'");
 while ($r = mysqli_fetch_assoc($result)){
-    $usages[] = $r;
+    $usage = array();
+    $usage["time"] =$r["time"];
+    $usage["data"] = intval($r["data"]);
+    $usages[] = $usage;
 }
 $data["usage_data"] = $usages;
 echo json_encode($data,JSON_PRETTY_PRINT);
