@@ -1,5 +1,6 @@
 <?php
 include "../../../../config/connection.php";
+include "../../../../config/functions.php";
 if (!isset($_GET['id'])) {
     echo '{
    "error": {
@@ -37,16 +38,7 @@ $levelRes = $con->query("SELECT data FROM level WHERE deviceId='$deviceId' ORDER
 if (mysqli_num_rows($levelRes) == 1) {
     $levelRow = mysqli_fetch_assoc($levelRes);
     $rHight = $levelRow["data"];
-//    $serverPrefix = "http://localhost/droplet/";
-    $serverPrefix = "http://139.59.81.23/apis/droplet/";
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_FOLLOWLOCATION => 1,
-        CURLOPT_URL => $serverPrefix . 'devices/device/?id=' . $deviceId
-    ));
-    $device = json_decode(curl_exec($curl));
-    curl_close($curl);
+    $device = sendCurl($api.'/devices/1');
     $height = ($device->height)-$rHight;
     $percentage = $height/($device->height);
     $volume = ($device->capacity)*$percentage;
