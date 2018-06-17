@@ -25,6 +25,6 @@ while($r = mysqli_fetch_assoc($result)){
 }
 $data["id"] = $deviceId;
 $data["year"] = $year;
-$data['years'] = $usageData;
+$data['months'] = $usageData;
 echo json_encode($data,JSON_PRETTY_PRINT);
 http_response_code(200);
