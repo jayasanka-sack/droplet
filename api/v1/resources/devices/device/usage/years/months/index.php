@@ -1,7 +1,7 @@
 <?php
 include "../../../../../../config/connection.php";
 include "../../../../../../config/functions.php";
-if (!isset($_GET['id']) && !isset($_GET['year'])) {
+if (!isset($_GET['id']) || !isset($_GET['year'])) {
     echo '{
    "error": {
       "message": "ID or year is missing",
