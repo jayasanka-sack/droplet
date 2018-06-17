@@ -1,5 +1,6 @@
 <?php
 include "../../config/connection.php";
+header('Content-Type: application/json');
 $res = $con->query("SELECT * FROM device");
 $data = array();
 $devices = array();

@@ -1,5 +1,6 @@
 <?php
 include "../../../../config/connection.php";
+header('Content-Type: application/json');
 if (!isset($_GET['id'])) {
     echo '{
    "error": {

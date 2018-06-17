@@ -1,6 +1,7 @@
 <?php
 include "../../../../config/connection.php";
 include "../../../../config/functions.php";
+header('Content-Type: application/json');
 if (!isset($_GET['id'])) {
     echo '{
    "error": {
