@@ -1,6 +1,6 @@
 <?php
-include "../../../../../config/connection.php";
-include "../../../../../config/functions.php";
+include "../../../../../../../../config/connection.php";
+include "../../../../../../../../config/functions.php";
 if (!isset($_GET['id'])) {
     echo '{
    "error": {
@@ -11,40 +11,53 @@ if (!isset($_GET['id'])) {
 }';
     http_response_code(400);
     exit();
-}
-$filters = "";
-if(isset($_GET['date'])){
-    $date = $_GET['date'];
-    if(isValidDate($date)){
-        $filters = " AND DATE(time) = DATE('$date')";
-    }else{
-        echo '{
+}elseif (!isset($_GET['year'])){
+    echo '{
    "error": {
-      "message": "Invalid Date format",
-      "type": "InvalidDateFormatException",
+      "message": "Year is missing",
+      "type": "InvalidRequestException",
       "code": 104
    }
 }';
-        exit();
-    }
-}else {
+    http_response_code(400);
+    exit();
+}elseif (!isset($_GET['month'])){
     echo '{
    "error": {
-      "message": "Date is missing",
-      "type": "MissingFieldsException",
+      "message": "Month is missing",
+      "type": "InvalidRequestException",
       "code": 104
-   }   
+   }
 }';
+    http_response_code(400);
+    exit();
+}elseif (!isset($_GET['day'])){
+    echo '{
+   "error": {
+      "message": "Day is missing",
+      "type": "InvalidRequestException",
+      "code": 104
+   }
+}';
+    http_response_code(400);
     exit();
 }
+$year = $_GET["year"];
+$month = $_GET["month"];
+$day = $_GET["day"];
+$usage = 0;
+
 $deviceId = $_GET['id'];
-$result = $con->query("SELECT SUM(data) AS data FROM `usage` WHERE deviceId='$deviceId'".$filters);
-if(mysqli_num_rows($result)==1){
+$result = $con->query("SELECT DAY(time) AS day, SUM(data) AS data FROM `usage` WHERE deviceId='$deviceId' AND YEAR(time) = '$year' AND MONTH(time)='$month' AND DAY(time)='$day' GROUP BY day");
+if(mysqli_num_rows($result) ==1){
     $r = mysqli_fetch_assoc($result);
-    $usage['data'] = intval($r['data']);
-}else{
-    $usage['data'] = 0;
+    $usage = intval($r["data"]);
 }
-echo json_encode($usage,JSON_PRETTY_PRINT);
+$data["id"] = $deviceId;
+$data["year"] = $year;
+$data["month"] = $month;
+$data["day"] = $day;
+$data["usage"] = $usage;
+echo json_encode($data,JSON_PRETTY_PRINT);
 
 http_response_code(200);

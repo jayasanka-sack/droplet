@@ -39,15 +39,15 @@ $year = $_GET['year'];
 $month = $_GET["month"];
 
 $limit = (isset($_GET['limit']))?" LIMIT ".intval($_GET['limit']):"";
-$result = $con->query("SELECT DAY(time) AS date, SUM(data) AS data FROM `usage` WHERE deviceId='$deviceId' AND YEAR(time)='$year' AND MONTH(time)='$month' GROUP BY date ORDER BY date".$limit);
+$result = $con->query("SELECT DAY(time) AS day, SUM(data) AS data FROM `usage` WHERE deviceId='$deviceId' AND YEAR(time)='$year' AND MONTH(time)='$month' GROUP BY day ORDER BY day".$limit);
 while($r = mysqli_fetch_assoc($result)){
-    $usage['date'] = $r['date'];
+    $usage['day'] = $r['day'];
     $usage['usage'] = intval($r['data']);
     $usageData[] = $usage;
 }
 $data["id"] = $deviceId;
 $data["year"] = $year;
 $data["month"] = $month;
-$data['dates'] = $usageData;
+$data['days'] = $usageData;
 echo json_encode($data,JSON_PRETTY_PRINT);
 http_response_code(200);
