@@ -1,61 +1,25 @@
+
 <!DOCTYPE html>
-<?php
-$curl = curl_init();
-curl_setopt_array($curl, array(
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_FOLLOWLOCATION => 1,
-    CURLOPT_URL => 'http://139.59.81.23/apis/droplet/test/fake.php'
-));
-$post = json_decode(curl_exec($curl));
-curl_close($curl);
-
-date_default_timezone_set("Asia/Colombo");
-?>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-    <title>Light Bootstrap Dashboard by Creative Tim</title>
-
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
-    <meta name="viewport" content="width=device-width"/>
-
-
-    <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
-
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet"/>
-
-    <!--firebase-->
-    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAia6DXR7EM7JdJ9UEI38piOfqEdnS0KX0",
-            authDomain: "droplet-204301.firebaseapp.com",
-            databaseURL: "https://droplet-204301.firebaseio.com",
-            projectId: "droplet-204301",
-            storageBucket: "droplet-204301.appspot.com",
-            messagingSenderId: "658684640307"
-        };
-        firebase.initializeApp(config);
-    </script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
 </head>
-<body>
 
+<body>
 <div class="wrapper">
     <div class="sidebar" data-image="assets/img/sidebar-5.jpg">
         <!--
@@ -76,42 +40,7 @@ date_default_timezone_set("Asia/Colombo");
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="./user.html">
-                        <i class="nc-icon nc-circle-09"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./table.html">
-                        <i class="nc-icon nc-notes"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./typography.html">
-                        <i class="nc-icon nc-paper-2"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./icons.html">
-                        <i class="nc-icon nc-atom"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./maps.html">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./notifications.html">
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
+                
                 <li class="nav-item active active-pro">
                     <a class="nav-link active" href="upgrade.html">
                         <i class="nc-icon nc-alien-33"></i>
@@ -122,61 +51,276 @@ date_default_timezone_set("Asia/Colombo");
         </div>
     </div>
     <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Droplet</a>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+            <div class=" container-fluid  ">
+                <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="dropdown">
+                                <i class="nc-icon nc-palette"></i>
+                                <span class="d-lg-none">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="nc-icon nc-planet"></i>
+                                <span class="notification">5</span>
+                                <span class="d-lg-none">Notification</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Notification 1</a>
+                                <a class="dropdown-item" href="#">Notification 2</a>
+                                <a class="dropdown-item" href="#">Notification 3</a>
+                                <a class="dropdown-item" href="#">Notification 4</a>
+                                <a class="dropdown-item" href="#">Another notification</a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="d-lg-block">&nbsp;Search</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pablo">
+                                <span class="no-icon">Account</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="no-icon">Dropdown</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pablo">
+                                <span class="no-icon">Log out</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <button id="btn-log-out" class="btn btn-danger">Logout</button>
-                    </li>
-                </ul>
             </div>
         </nav>
-
+        <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Water level</h4>
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">Email Statistics</h4>
+                                <p class="card-category">Last Campaign Performance</p>
                             </div>
-                            <div class="content">
+                            <div class="card-body ">
                                 <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                                <div class="footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Remaining
-                                        <i class="fa fa-circle text-danger"></i> Used
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i> Updated on <?php echo date('l jS \of F Y') ?> <br>at <?php echo date("h:i:s A") ?>
-                                    </div>
+                            </div>
+                            <div class="card-footer ">
+                                <div class="legend">
+                                    <i class="fa fa-circle text-info"></i> Open
+                                    <i class="fa fa-circle text-danger"></i> Bounce
+                                    <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-8">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Users Behavior</h4>
-                                <p class="category">24 Hours performance</p>
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">Users Behavior</h4>
+                                <p class="card-category">24 Hours performance</p>
                             </div>
-                            <div class="content">
+                            <div class="card-body ">
                                 <div id="chartHours" class="ct-chart"></div>
-                                <div class="footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Click
-                                        <i class="fa fa-circle text-warning"></i> Click Second Time
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-history"></i> Updated 3 minutes ago
-                                    </div>
+                            </div>
+                            <div class="card-footer ">
+                                <div class="legend">
+                                    <i class="fa fa-circle text-info"></i> Open
+                                    <i class="fa fa-circle text-danger"></i> Click
+                                    <i class="fa fa-circle text-warning"></i> Click Second Time
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-history"></i> Updated 3 minutes ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">2017 Sales</h4>
+                                <p class="card-category">All products including Taxes</p>
+                            </div>
+                            <div class="card-body ">
+                                <div id="chartActivity" class="ct-chart"></div>
+                            </div>
+                            <div class="card-footer ">
+                                <div class="legend">
+                                    <i class="fa fa-circle text-info"></i> Tesla Model S
+                                    <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-check"></i> Data information certified
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card  card-tasks">
+                            <div class="card-header ">
+                                <h4 class="card-title">Tasks</h4>
+                                <p class="card-category">Backend development</p>
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-full-width">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="" checked>
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="" checked>
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" checked>
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Read "Following makes Medium better"</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="" disabled>
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Unfollow 5 enemies from twitter</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+                                <div class="stats">
+                                    <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
                                 </div>
                             </div>
                         </div>
@@ -184,93 +328,68 @@ date_default_timezone_set("Asia/Colombo");
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <nav>
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-center">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    </p>
+                </nav>
+            </div>
+        </footer>
     </div>
 </div>
-
-
 </body>
-
 <!--   Core JS Files   -->
-<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--  Charts Plugin -->
-<script src="assets/js/chartist.min.js"></script>
-
+<script src="assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="assets/js/plugins/bootstrap-switch.js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!--  Chartist Plugin  -->
+<script src="assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
-<script src="assets/js/bootstrap-notify.js"></script>
-
-<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
-
+<script src="assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
 
-        var dataSales = {
-            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
-            series: [
-                [287, 385, 490, 492, 554, 586, 698, 695, 752, 788, 846, 944],
-                [67, 152, 143, 240, 287, 335, 435, 437, 539, 542, 544, 647],
-                [23, 113, 67, 108, 190, 239, 307, 308, 439, 410, 410, 509]
-            ]
-        };
+        demo.showNotification();
 
-        var optionsSales = {
-            lineSmooth: false,
-            low: 0,
-            high: 800,
-            showArea: true,
-            height: "245px",
-            axisX: {
-                showGrid: false,
-            },
-            lineSmooth: Chartist.Interpolation.simple({
-                divisor: 3
-            }),
-            showLine: false,
-            showPoint: false,
-        };
-
-        var responsiveSales = [
-            ['screen and (max-width: 640px)', {
-                axisX: {
-                    labelInterpolationFnc: function (value) {
-                        return value[0];
-                    }
-                }
-            }]
-        ];
-
-        Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
-        var dataPreferences = {
-            series: [
-                [25, 30, 20, 25]
-            ]
-        };
-
-        var optionsPreferences = {
-            donut: true,
-            donutWidth: 40,
-            startAngle: 0,
-            total: 100,
-            showLabel: false,
-            axisX: {
-                showGrid: false
-            }
-        };
-        Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
-        Chartist.Pie('#chartPreferences', {
-            labels: ['<?php echo $post->level;?>%', '<?php echo 100 - $post->level;?>%'],
-            series: [<?php echo $post->level;?>, <?php echo 100 - $post->level;?>]
-        });
     });
 </script>
-<script>
-    function userLogOut() {
-        firebase.auth().signOut();
-        window.location.href = '../Web-pages/Pages/login-page.html';
-    }
-    document.getElementById('btn-log-out').addEventListener('click',userLogOut);
-</script>
+
 </html>
