@@ -33,22 +33,15 @@ if (!isset($_SESSION['deviceId'])) exit();
 -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="#" class="simple-text">
+                    Droplet
                 </a>
             </div>
             <ul class="nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="dashboard.html">
-                        <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-
-                <li class="nav-item active active-pro">
-                    <a class="nav-link active" href="upgrade.html">
-                        <i class="nc-icon nc-alien-33"></i>
-                        <p>Upgrade to PRO</p>
+                        <i class="material-icons">refresh</i>
+                        <p>Refresh</p>
                     </a>
                 </li>
             </ul>
@@ -58,7 +51,7 @@ if (!isset($_SESSION['deviceId'])) exit();
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                <a class="navbar-brand" href="#pablo"> Refresh </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
@@ -127,7 +120,6 @@ if (!isset($_SESSION['deviceId'])) exit();
         <div class="content">
             <div id="page" class="container-fluid">
 
-
             </div>
         </div>
         <footer class="footer">
@@ -160,7 +152,7 @@ if (!isset($_SESSION['deviceId'])) exit();
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                        <a href="#">Team Double Tape</a>, made with love for a better future
                     </p>
                 </nav>
             </div>
