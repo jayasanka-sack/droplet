@@ -1,11 +1,13 @@
+var server = "http://localhost/droplet";
+var api = server+"/api/v1";
 function getCurrentStatus(id) {
-
     $.ajax({
         type: 'get',
-        url: 'http://139.59.81.23/apis/droplet/api/v1/devices/'+id+'/summary',
+        url: api+'/devices/'+id+'/summary',
         dataType: 'json',
         success: function (data) {
-            console.log(data);
+            $('#val-usage-today').text(data["usage"]["day"]+" L");
+            $('#val-usage-month').text(data["usage"]["month"]+" L");
         }
 
     });
