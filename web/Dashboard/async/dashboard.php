@@ -122,7 +122,7 @@
     </div>
 </div>
 <script>
-    getCurrentStatus(1);
+    updateCurrentStatus(1);
     var dataSales = {
         labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
         series: [
@@ -156,21 +156,5 @@
         }]
     ];
     Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
-    var dataPreferences = {
-    };
-    var optionsPreferences = {
-        donut: true,
-        donutWidth: 40,
-        startAngle: 0,
-        total: 100,
-        showLabel: false,
-        axisX: {
-            showGrid: false
-        }
-    };
-    Chartist.Pie('#chartWaterLevel', dataPreferences, optionsPreferences);
-    Chartist.Pie('#chartWaterLevel', {
-        labels: ['80%', '20%'],
-        series: [80, 20]
-    });
+
 </script>
