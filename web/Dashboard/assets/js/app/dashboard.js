@@ -8,6 +8,7 @@ function getCurrentStatus(id) {
         success: function (data) {
             $('#val-usage-today').text(data["usage"]["day"]+" L");
             $('#val-usage-month').text(data["usage"]["month"]+" L");
+            $('#val-remaining-level').text(data["level"]["volume"]+" L");
         }
 
     });
