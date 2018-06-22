@@ -79,21 +79,20 @@
     <div class="col-md-4">
         <div class="card ">
             <div class="card-header ">
-                <h4 class="card-title">Water Level</h4>
-                <p class="card-category">Last Campaign Performance</p>
+                <h4 class="card-title">Tank's Water</h4>
+                <p class="card-category">Last Day results</p>
             </div>
             <div class="card-body ">
                 <div id="chartWaterLevel" class="ct-chart ct-perfect-fourth"></div>
             </div>
             <div class="card-footer ">
                 <div class="legend">
-                    <i class="fa fa-circle text-info"></i> Open
-                    <i class="fa fa-circle text-danger"></i> Bounce
-                    <i class="fa fa-circle text-warning"></i> Unsubscribe
+                    <i class="fa fa-circle text-info"></i> Remaining
+                    <i class="fa fa-circle text-danger"></i> Used
                 </div>
                 <hr>
                 <div class="stats">
-                    <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                    <i class="fa fa-clock-o"></i> Updated 1 second ago
                 </div>
             </div>
         </div>
@@ -101,7 +100,7 @@
     <div class="col-md-8">
         <div class="card ">
             <div class="card-header ">
-                <h4 class="card-title">Users Behavior</h4>
+                <h4 class="card-title">Water Usage</h4>
                 <p class="card-category">24 Hours performance</p>
             </div>
             <div class="card-body ">
@@ -109,13 +108,11 @@
             </div>
             <div class="card-footer ">
                 <div class="legend">
-                    <i class="fa fa-circle text-info"></i> Open
-                    <i class="fa fa-circle text-danger"></i> Click
-                    <i class="fa fa-circle text-warning"></i> Click Second Time
+                    <i class="fa fa-circle text-info"></i> Usage
                 </div>
                 <hr>
                 <div class="stats">
-                    <i class="fa fa-history"></i> Updated 3 minutes ago
+                    <i class="fa fa-history"></i> Updated 1 second ago
                 </div>
             </div>
         </div>
