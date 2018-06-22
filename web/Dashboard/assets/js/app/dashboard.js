@@ -25,7 +25,56 @@ function updateCurrentStatus(id) {
                 }
             };
             Chartist.Pie('#chartWaterLevel', dataPreferences);
+            updateLastDays(id);
         }
 
+    });
+}
+
+function updateLastDays(id){
+    var date = new Date();
+    $.ajax({
+        type: 'get',
+        url: api + '/devices/' + id + '/usage/limit/days',
+        dataType: 'json',
+        success: function (data) {
+            var days = [];
+            var usageData = [];
+            for (var i = 0; i < data["days"].length; i++) {
+                days.push(data["days"][i]["day"]);
+                usageData.push(data["days"][i]["usage"]);
+            }
+            console.log(usageData);
+            var dataSales = {
+                labels: days,
+                series: [
+                    usageData
+                ]
+            };
+            var optionsSales = {
+                lineSmooth: false,
+                low: 0,
+                showArea: true,
+                height: "245px",
+                axisX: {
+                    showGrid: false,
+                },
+                lineSmooth: Chartist.Interpolation.simple({
+                    divisor: 3
+                }),
+                showLine: false,
+                showPoint: false,
+            };
+            var responsiveSales = [
+                ['screen and (max-width: 640px)', {
+                    axisX: {
+                        labelInterpolationFnc: function (value) {
+                            return value[0];
+                        }
+                    }
+                }]
+            ];
+            Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
+        }
     });
 }
