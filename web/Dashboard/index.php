@@ -51,7 +51,7 @@ if (!isset($_SESSION['deviceId'])) exit();
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo" onclick="updateCurrentStatus(<?= $_SESSION['deviceId']?>)"> Refresh </a>
+                <a class="navbar-brand" href="#pablo" onclick="updateCurrentStatus(1)"> Refresh </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>

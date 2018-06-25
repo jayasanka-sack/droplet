@@ -1,4 +1,5 @@
 var server = "http://localhost/droplet";
+// var server = "http://139.59.81.23/apis/droplet/";
 var api = server+"/api/v1";
 function updateCurrentStatus(id) {
     $.ajax({
