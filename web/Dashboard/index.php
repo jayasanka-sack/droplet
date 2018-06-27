@@ -51,14 +51,14 @@ if (!isset($_SESSION['deviceId'])) exit();
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo" onclick="updateCurrentStatus(1)"> Refresh </a>
+                <a class="navbar-brand" href="#pablo" onclick="updateCurrentStatus(<?= $_SESSION['deviceId']?>)"> Refresh </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
                     <span class="navbar-toggler-bar burger-lines"></span>
                     <span class="navbar-toggler-bar burger-lines"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="dropdown">
@@ -190,6 +190,7 @@ if (!isset($_SESSION['deviceId'])) exit();
     {
         loadPage(pageRosolve(window.location.hash));
     });
+
     function loadPage(url){
 
         $.ajax({
@@ -204,6 +205,7 @@ if (!isset($_SESSION['deviceId'])) exit();
         });
 
     }
+
     function pageRosolve(hash) {
         hash = hash.substr(1);
         hash = hash.replace("QA","\/");
@@ -212,6 +214,7 @@ if (!isset($_SESSION['deviceId'])) exit();
         hash = hash.replace("-xx",".php");
         return hash;
     }
+
     function changeActive(elementId){
         var navBar = $('#navBar');
         navBar.find("li").removeClass('active');

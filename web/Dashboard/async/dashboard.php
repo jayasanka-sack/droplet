@@ -101,11 +101,51 @@
     <div class="col-md-8">
         <div class="card ">
             <div class="card-header ">
-                <h4 class="card-title">Water Usage</h4>
+                <h4 class="card-title">Water Usage(Daily)</h4>
                 <p class="card-category">24 Hours performance</p>
             </div>
             <div class="card-body ">
-                <div id="chartHours" class="ct-chart"></div>
+                <div id="chartDays" class="ct-chart xx"></div>
+            </div>
+            <div class="card-footer ">
+                <div class="legend">
+                    <i class="fa fa-circle text-info"></i> Usage
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="fa fa-history"></i> Updated 1 second ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="card-header ">
+                <h4 class="card-title">Water Usage(Monthly)</h4>
+                <p class="card-category">24 Hours performance</p>
+            </div>
+            <div class="card-body ">
+                <div id="chartMonths" class="ct-chart xx"></div>
+            </div>
+            <div class="card-footer ">
+                <div class="legend">
+                    <i class="fa fa-circle text-info"></i> Usage
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="fa fa-history"></i> Updated 1 second ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="card-header ">
+                <h4 class="card-title">Water Usage(Annual)</h4>
+                <p class="card-category">24 Hours performance</p>
+            </div>
+            <div class="card-body ">
+                <div id="chartYears" class="ct-chart xx"></div>
             </div>
             <div class="card-footer ">
                 <div class="legend">

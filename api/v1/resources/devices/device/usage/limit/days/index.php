@@ -17,7 +17,7 @@ $result = $con->query("SELECT DAY(time) AS day, SUM(data) AS data FROM `usage` W
 while($r = mysqli_fetch_assoc($result)){
     $newArr[array_search($r['day'], $arr)] = $r['data'];
 }
-for($i = 0; $i <= 7; $i++){
+for($i = 0; $i < 7; $i++){
     $usage = array();
     $usage['day'] = $arr[$i];
     $usage['usage'] = intval($newArr[$i]);
