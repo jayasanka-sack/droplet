@@ -108,7 +108,7 @@ if (!isset($_SESSION['deviceId'])) exit();
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
+                            <a class="nav-link" href="logout.php">
                                 <span class="no-icon">Log out</span>
                             </a>
                         </li>
