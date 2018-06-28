@@ -44,8 +44,8 @@ if (mysqli_num_rows($levelRes) == 1) {
     $height = ($device->height)-$rHight;
     $percentage = $height/($device->height);
     $volume = ($device->capacity)*$percentage;
-    $level["percentage"] = $percentage*100;
-    $level["volume"] = $volume;
+    $level["percentage"] = intval($percentage*100);
+    $level["volume"] = intval($volume);
 }
 $summery["usage"] = $usage;
 $summery["level"] = $level;
