@@ -19,8 +19,10 @@ $isSuccess = false;
 if(isset($_GET['rHeight'])){
     $rHeight = $_GET['rHeight'];
     if(is_numeric($rHeight)){
-        $rHeight = intval($rHeight);
-        $con->query("INSERT INTO level(deviceId, time, data) VALUES ('$deviceId','$date','$rHeight')");
+        if($rHeight>0){
+            $rHeight = intval($rHeight);
+            $con->query("INSERT INTO level(deviceId, time, data) VALUES ('$deviceId','$date','$rHeight')");
+        }
     }
 }
 if(isset($_GET['usage'])){
